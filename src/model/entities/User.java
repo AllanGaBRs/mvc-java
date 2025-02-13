@@ -25,6 +25,12 @@ public class User {
     }
 
 	public void setName(String name) {
+		 if (name == null || name.isBlank()) {
+		        throw new IllegalArgumentException("Nome não pode ser vazio");
+		    }
+		    if(name.trim().length() < 3) {
+		    	throw new IllegalArgumentException("Nome deve conter no min 3 caracteres");
+		    }
 	    this.name = name;
 	}
 
