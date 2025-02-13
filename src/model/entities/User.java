@@ -76,6 +76,15 @@ public class User {
 	}
 
 	public void setCpf(String cpf) {
+		if (cpf == null || cpf.isBlank()) {
+			throw new IllegalArgumentException("CPF não pode ser vazio");
+		}
+		if (!cpf.matches("\\d{11}")) {
+			throw new IllegalArgumentException("CPF deve conter 11 números.");
+		}
+		if (!cpf.matches("\\d+")) {
+			throw new IllegalArgumentException("CPF deve conter apenas numeros.");
+		}
 		this.cpf = cpf.trim();
 	}
 
