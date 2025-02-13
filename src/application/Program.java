@@ -38,7 +38,7 @@ public class Program {
 				System.out.println("Email do " + name);
 				String email = sc.nextLine();
 				test.setEmail(email);
-				System.out.println("CPF do " + name);
+				System.out.println("CPF do " + name + " (apenas número)");
 				String cpf = sc.nextLine();
 				test.setCpf(cpf);
 				System.out.println("Rua do " + name);
