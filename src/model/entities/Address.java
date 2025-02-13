@@ -30,6 +30,9 @@ public class Address {
 	}
 
 	public void setNumber(Integer number) {
+		if (number < 0) {
+			throw new IllegalArgumentException("Numero invalido");
+		}
 		this.number = number;
 	}
 
