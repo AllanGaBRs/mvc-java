@@ -31,7 +31,7 @@ public class User {
 		if (name.trim().length() < 3) {
 			throw new IllegalArgumentException("Nome deve conter no min 3 caracteres");
 		}
-		this.name = name;
+		this.name = name.trim();
 	}
 
 	public int getAge() {
@@ -50,6 +50,16 @@ public class User {
 	}
 
 	public void setEmail(String email) {
+		if (email == null || email.isBlank()) {
+			throw new IllegalArgumentException("Email nao pode ser vazio");
+		}
+
+		String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+
+		if (!email.matches(emailRegex)) {
+			throw new IllegalArgumentException("Email inválido");
+		}
+
 		this.email = email.trim();
 	}
 
