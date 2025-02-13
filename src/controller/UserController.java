@@ -40,14 +40,24 @@ public class UserController {
 			view.showMessage("Erro ao adicionar usuário: " + e.getMessage());
 		}
 	}
-	
-	  public void searchUserByName(String name) {
-	        for (User user : users) {
-	            if (user.getName().equals(name)) {
-	                view.showUserDetails(user.getName(), user.getAge(), user.getEmail(), user.getAddress(), user.getCpf());
-	                return;
-	            }
-	        }
-	        view.showMessage("Usuário não encontrado.");
-	    }
+
+	public void searchUserByName(String name) {
+		for (User user : users) {
+			if (user.getName().equals(name)) {
+				view.showUserDetails(user.getName(), user.getAge(), user.getEmail(), user.getAddress(), user.getCpf());
+				return;
+			}
+		}
+		view.showMessage("Usuário não encontrado.");
+	}
+
+	public void searchUserByCpf(String cpf) {
+		for (User user : users) {
+			if (user.getCpf().equals(cpf)) {
+				view.showUserDetails(user.getName(), user.getAge(), user.getEmail(), user.getAddress(), user.getCpf());
+				return;
+			}
+		}
+		view.showMessage("Usuário não encontrado.");
+	}
 }
