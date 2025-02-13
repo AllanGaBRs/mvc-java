@@ -20,9 +20,18 @@ public class UserView {
 		System.out.println(message);
 	}
 
-	 public void showUserList(ArrayList<User> users) {
-	    	for(int i = 0; i < users.size(); i++) {
-	    		System.out.println(i + 1 + " - " + users.get(i));
-	    	}
-	    }
+	public void showUserList(ArrayList<User> users) {
+		for (int i = 0; i < users.size(); i++) {
+			System.out.println(i + 1 + " - " + users.get(i));
+		}
+	}
+	
+	public void showMenu() {
+    	System.out.println("Escolha uma opção:");
+		System.out.println("1 - Registrar");
+		System.out.println("2 - Listar todos");
+		System.out.println("3 - Buscar pelo CPF");
+		System.out.println("4 - Buscar pelo Nome");
+		System.out.println("5 - Sair");
+    }
 }
