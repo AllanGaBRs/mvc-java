@@ -1,6 +1,9 @@
 package view;
 
+import java.util.ArrayList;
+
 import model.entities.Address;
+import model.entities.User;
 
 public class UserView {
 
@@ -17,4 +20,9 @@ public class UserView {
 		System.out.println(message);
 	}
 
+	 public void showUserList(ArrayList<User> users) {
+	    	for(int i = 0; i < users.size(); i++) {
+	    		System.out.println(i + 1 + " - " + users.get(i));
+	    	}
+	    }
 }
