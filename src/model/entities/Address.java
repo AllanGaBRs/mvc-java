@@ -4,9 +4,9 @@ public class Address {
 
 	private String street;
 	private Integer number;
-	
+
 	public Address() {
-		
+
 	}
 
 	public Address(String street, Integer number) {
@@ -19,6 +19,9 @@ public class Address {
 	}
 
 	public void setStreet(String street) {
+		if (street == null || street.isBlank()) {
+			throw new IllegalArgumentException("O campo 'Rua' não pode ser vazio");
+		}
 		this.street = street.trim();
 	}
 
@@ -32,7 +35,6 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "\nRua: " + street
-				+ "\nNumero: " + number + "";
-	}	
+		return "\nRua: " + street + "\nNumero: " + number + "";
+	}
 }

@@ -24,10 +24,6 @@ public class User {
         return name;
     }
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
 	public void setName(String name) {
 	    this.name = name;
 	}
@@ -53,6 +49,10 @@ public class User {
         return address;
     }
 
+    public void setAddress(Address address) {
+		this.address = address;
+	}
+    
     public String getCpf() {
         return cpf;
     }
