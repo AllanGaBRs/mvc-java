@@ -60,4 +60,8 @@ public class UserController {
 		}
 		view.showMessage("Usuário não encontrado.");
 	}
+	
+	public void listAll() {
+    	view.showUserList(users);
+    }
 }
