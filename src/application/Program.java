@@ -3,7 +3,6 @@ package application;
 import java.util.Scanner;
 
 import controller.UserController;
-import model.entities.Address;
 import model.entities.User;
 import view.UserView;
 
@@ -27,27 +26,8 @@ public class Program {
 			switch (opcao) {
 			case 1:
 
-				System.out.println("Nome do usuario:");
-				String name = sc.nextLine();
-				User test = new User();
-				test.setName(name);
-				System.out.println("Idade do " + name);
-				Integer age = sc.nextInt();
-				test.setAge(age);
-				sc.nextLine();
-				System.out.println("Email do " + name);
-				String email = sc.nextLine();
-				test.setEmail(email);
-				System.out.println("CPF do " + name + " (apenas número)");
-				String cpf = sc.nextLine();
-				test.setCpf(cpf);
-				System.out.println("Rua do " + name);
-				String street = sc.nextLine();
-				System.out.println("Numero da casa do " + name);
-				Integer number = sc.nextInt();
-				Address addressTest = new Address(street, number);
-				test.setAddress(addressTest);
-				controller.addUser(name, age, email, street, number, cpf);
+				User user = view.userRegister(sc);
+				controller.addUser(user.getName(), user.getAge(), user.getEmail(), user.getAddress().getStreet(), user.getAddress().getNumber(), user.getCpf());
 
 				break;
 			case 2:
