@@ -8,25 +8,27 @@ A aplicação segue o padrão de arquitetura MVC (Model-View-Controller).
 ## Estrutura do Projeto
 ```
 - src/
+  - application/
+    -Program.java
   - controller/
     - UserController.java
   - model/
-    - User.java
-    - Address.java
+    -entities/
+      - User.java
+      - Address.java
   - view/
     - UserView.java
-  - Main.java
 ```
 
 ## Funcionalidades
 ### **UserController** (Camada de Controle)
-- `addUser(String name, String cpf, Address endere)`: Adiciona um usuário ao sistema, verificando se o CPF já está cadastrado.
+- `addUser(String name, int age, String email, String street, Integer number, String cpf)`: Adiciona um usuário ao sistema, verificando se o CPF já está cadastrado.
 - `searchUserByName(String name)`: Procura um usuário pelo nome e exibe o primeiro resultado encontrado.
 - `searchUserByCpf(String cpf)`: Exibe o usuário que possui o CPF informado, caso esteja registrado.
 - `listAll()`: Lista todos os usuários cadastrados.
 
 ### **Model** (Camada de Modelo)
-- **User**: Representa um usuário, contendo atributos como nome, CPF e um objeto `Address`.
+- **User**: Representa um usuário, contendo atributos como nome, idade, email, CPF e um objeto `Address`.
 - **Address**: Representa um endereço, associado ao usuário.
 
 ### **UserView** (Camada de Visão)
